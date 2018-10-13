@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>drinknow</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <img src="./img/imok.png" alt="imok" id="img">
+        <div class="progressbar">
+            <span class="bar"></span>
+        </div>
+    </div>
+</body>
+
+<style scoped>
+    html {
+        width: 200px;
+        height: 100px;
+    }
+
+    body,
+    #wrapper {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(54, 106, 211);
+    }
+
+    .progressbar {
+        height: 10%;
+        width: 90%;
+        background-color: #fff;
+        border-radius: 20px;
+    }
+
+    .bar {
+        display: block;
+        width: 50%;
+        height: 100%;
+        background-color: #a4cfe8;
+        border-radius: 20px;
+    }
+
+    #img {
+        width: 15%;
+        animation: duck 0.5s linear infinite alternate;
+    }
+
+    @keyframes duck {
+        from {
+            transform: rotate(-10deg);
+        }
+
+        to {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+<script src="js/popup.js"></script>
+
+</html>
