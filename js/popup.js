@@ -10,11 +10,12 @@ console.log(getHtml.style.width);
 //文字提示和小鸭子
 getClock.style.left = `${bg.timer()-10}%`;
 getImg.style.left = `${bg.timer()}%`;
-getImg.innerText = `已经${Math.floor(bg.timer()*36/60)}min没有喝水了`;
+getImg.innerText = `${Math.floor(bg.timer()*36/60)}min！暂时安全！(ˊ˘ˋ*)♡`;
 
 if (Math.ceil(bg.timer() * 36 / 60 > 30)) {
     getImg.className = "clockleft";
     getImg.style.left = `${bg.timer()-20}%`;
+    getImg.innerText = `${Math.floor(bg.timer()*36/60)}min！喝水警告！(ˊ˘ˋ*)♡`;
 }
 
 if (Math.ceil(bg.timer() * 36 / 60 == 60)) {
@@ -28,7 +29,7 @@ document.getElementsByClassName("bar")[0].style.width = `${bg.timer()}%`;
 document.getElementById("refresh").addEventListener("click", function (e) {
     bg.refresh();
     getClock.src = "../img/imok.png";
-    getImg.innerText = `吃饱喝足没吱吱吱吱吱！`;
+    getImg.innerText = `哧溜哧溜～喝水了！`;
     getClock.style.left = `-10%`;
     getImg.style.left = `0%`;
     document.getElementsByClassName("bar")[0].style.width = `0%`;

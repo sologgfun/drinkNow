@@ -10,7 +10,7 @@
 
 <body>
     <div id="wrapper">
-        <div id="clock" class="clockright">距离上次时间过去了xxx</div>
+        <div id="clock" class="clockright"></div>
         <img src="./img/imok.png" alt="imok" id="img">
         <div class="progressbar">
             <span class="bar"></span>
@@ -23,23 +23,23 @@
     html {
         width: 400px;
         height: 150px;
-        margin:0;
+        margin: 0;
         background-color: #fffce6c7;
     }
 
-    body{
-        margin:0;
+    body {
+        margin: 0;
         width: 100%;
         height: 100%;
         position: relative;
         /* background-color: rgb(54, 106, 211); */
     }
-    
+
     #wrapper {
         margin-left: 5%;
         width: 90%;
         height: 100%;
-        margin-top: 1%; 
+        margin-top: 1%;
         /* background-color: rgb(54, 106, 211); */
     }
 
@@ -65,39 +65,44 @@
         animation: duck 0.5s linear infinite alternate;
         transition: left 1s linear;
     }
-    #clock{
+
+    #clock {
         transition: left 1s linear;
     }
-    .clockright{
+
+    .clockright {
         /* margin-top: 15%; */
-        width: 15%;
+        width: 25%;
         position: relative;
-        color:#778087;
-        box-shadow: 0 2px 3px rgba(0,0,0,.1);
+        color: #778087;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
         border-bottom: 1px solid #e2e2e2;
         padding: 3%;
         padding-top: 3.5%;
         background-color: #fff;
         border-radius: 20px 20px 20px 0px;
     }
-    .clockleft{
+
+    .clockleft {
         /* margin-top: 15%; */
-        width: 15%;
+        width: 25%;
         position: relative;
-        color:#778087;
-        box-shadow: 0 2px 3px rgba(0,0,0,.1);
+        color: #778087;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
         border-bottom: 1px solid #e2e2e2;
         padding: 3%;
         padding-top: 4%;
         background-color: #fff;
         border-radius: 20px 20px 0px 20px;
     }
-    #refresh{
+
+    #refresh {
         width: 8%;
         cursor: pointer;
         float: right;
         margin-top: 1%;
     }
+
     @keyframes duck {
         from {
             transform: rotate(-10deg);

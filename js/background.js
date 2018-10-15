@@ -45,7 +45,7 @@ function timer() {
         window.clearInterval(countdownId);
 
         //test
-        notificationAction();
+        // notificationAction();
     }
 
     var fivemin = 0;
