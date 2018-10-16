@@ -23,7 +23,7 @@ function turnlight() {
 
 function timer() {
     if (!light) {
-        return count
+        return count / 36
     }
     if (count < 3600) {
         count++;

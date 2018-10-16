@@ -8,7 +8,7 @@ var check = document.getElementById("toggle");
 //true为黑夜
 
 if (!light) {
-    getImg.innerText = `大魔法让时间停止了！`;
+    getImg.innerText = `大魔法让时间停止了!`;
     check.checked = true;
     getHtml.id = "htmlbg2";
     progressbar.id = "progressbar2";
