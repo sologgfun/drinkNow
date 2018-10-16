@@ -1,22 +1,21 @@
 {
     "manifest_version": 2,
-    "name": "RD",
-    "version": "1.0.0",
-    "description": "drinknow!",
+    "name": "多喝热水",
+    "version": "0.0.1",
+    "description": "妈妈再也不担心我不喝水了!",
 
     "icons": {
         "16": "./img/logo.png",
         "48": "./img/logo.png",
         "128": "./img/logo.png"
     },
-    "permissions":
-	[
-		"notifications", 
-		"webRequestBlocking",
-		"storage", 
-		"http://*/*", 
-		"https://*/*" 
-	],
+    "permissions": [
+        "notifications",
+        "webRequestBlocking",
+        "storage",
+        "http://*/*",
+        "https://*/*"
+    ],
     "background": {
         "page": "./background.html"
     },
@@ -26,12 +25,10 @@
         "default_title": "drinkNow!",
         "default_popup": "./popup.html"
     },
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "js": ["js/content-script.js"],
-            "run_at": "document_start"
-        }
-    ]
-    
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["js/content-script.js"],
+        "run_at": "document_start"
+    }]
+
 }

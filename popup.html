@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlbg">
 
 <head>
     <meta charset="UTF-8">
@@ -9,22 +9,45 @@
 </head>
 
 <body>
+    <input id="toggle" class="switch" type="checkbox">
     <div id="wrapper">
-        <div id="clock" class="clockright"></div>
-        <img src="./img/imok.png" alt="imok" id="img">
-        <div class="progressbar">
-            <span class="bar"></span>
+        <div class="toplayer">
+            <div id="sun" class="sun"></div>
+            <div id="clock" class="clock"></div>
+            <img src="./img/refresh.png" alt="imok" id="refresh">
         </div>
-        <img src="./img/refresh.png" alt="imok" id="refresh">
+        <div class="imgWrap">
+            <img src="./img/imok.png" alt="imok" id="img">
+            <div class="progressbar" id="progressbar">
+                <span class="bar"></span>
+            </div>
+        </div>
     </div>
 </body>
 
 <style scoped>
-    html {
+    *,
+    :after,
+    :before {
+        box-sizing: border-box;
+    }
+
+    #htmlbg {
         width: 400px;
         height: 150px;
         margin: 0;
         background-color: #fffce6c7;
+    }
+
+    #htmlbg2 {
+        width: 400px;
+        height: 150px;
+        margin: 0;
+        background-color: #333e7d;
+    }
+
+    .switch {
+        display: none;
     }
 
     body {
@@ -36,6 +59,9 @@
     }
 
     #wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         margin-left: 5%;
         width: 90%;
         height: 100%;
@@ -44,10 +70,13 @@
     }
 
     .progressbar {
-        height: 10%;
-        width: 100%;
+        height: 80%;
+        position: relative;
+        left: -10%;
+        width: 120%;
         background-color: #a4cfe8;
         border-radius: 20px;
+        transition: all .4s ease-in-out 0s;
     }
 
     .bar {
@@ -56,8 +85,9 @@
         height: 100%;
         background-color: rgb(54, 106, 211);
         border-radius: 20px;
-        transition: width 1s linear;
+        transition: all .4s ease-in-out 0s;
     }
+
 
     #img {
         width: 15%;
@@ -66,41 +96,39 @@
         transition: left 1s linear;
     }
 
-    #clock {
-        transition: left 1s linear;
+    .toplayer {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .clockright {
-        /* margin-top: 15%; */
-        width: 25%;
+    .clock {
         position: relative;
-        color: #778087;
-        box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
-        border-bottom: 1px solid #e2e2e2;
-        padding: 3%;
-        padding-top: 3.5%;
-        background-color: #fff;
-        border-radius: 20px 20px 20px 0px;
+        left: -15%;
     }
 
-    .clockleft {
-        /* margin-top: 15%; */
-        width: 25%;
-        position: relative;
-        color: #778087;
-        box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
-        border-bottom: 1px solid #e2e2e2;
-        padding: 3%;
-        padding-top: 4%;
-        background-color: #fff;
-        border-radius: 20px 20px 0px 20px;
+    .imgWrap {
+        width: 100%;
+        height: 20%;
+    }
+
+    .sun {
+        width: 50px;
+        height: 50px;
+        background-color: #ff3f2b;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all .4s ease-in-out 0s;
     }
 
     #refresh {
+        position: absolute;
+        top: 1%;
+        right: 2%;
         width: 8%;
         cursor: pointer;
-        float: right;
-        margin-top: 1%;
     }
 
     @keyframes duck {
@@ -111,6 +139,89 @@
         to {
             transform: rotate(10deg);
         }
+    }
+
+    #progressbar:before {
+        z-index: -2;
+        border: 60px solid transparent;
+        border-bottom: 100px solid rgba(0, 0, 0, .25);
+        border-left-width: 75px;
+        border-right-width: 65px;
+
+        width: 0;
+        height: 0;
+        bottom: 0;
+        transition: all .4s ease-in-out 0s;
+
+        content: '';
+        position: absolute;
+    }
+
+    #progressbar:after {
+        z-index: -2;
+        right: 0;
+        border: 60px solid transparent;
+        border-bottom: 140px solid rgba(0, 0, 0, .35);
+        border-left-width: 100px;
+        border-right-width: 100px;
+
+        width: 0;
+        height: 0;
+        bottom: 0;
+        transition: all .4s ease-in-out 0s;
+
+        content: '';
+        position: absolute;
+    }
+
+    #progressbar2:before {
+        z-index: -2;
+        left: 50%;
+        border: 60px solid transparent;
+        border-bottom: 100px solid rgba(255, 255, 255, .15);
+        border-left-width: 75px;
+        border-right-width: 65px;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        transition: all .4s ease-in-out 0s;
+        content: '';
+        position: absolute;
+    }
+
+    #progressbar2:after {
+        z-index: -2;
+        right: 30%;
+        border: 60px solid transparent;
+        border-bottom: 140px solid rgba(255, 255, 255, .2);
+        border-left-width: 100px;
+        border-right-width: 100px;
+
+        width: 0;
+        height: 0;
+        bottom: 0;
+        transition: all .4s ease-in-out 0s;
+
+        content: '';
+        position: absolute;
+    }
+
+    #toggle:checked+#wrapper .sun {
+        transform: scale(0.8);
+        background-color: #fff;
+        transition: all .4s ease-in-out 0s;
+    }
+
+    #toggle:checked+#wrapper .clock {
+        color: #fff
+    }
+
+    #toggle:checked+#wrapper .bar {
+        background-color: rgb(53, 79, 132);
+    }
+
+    #toggle:checked+#wrapper .progressbar {
+        background-color: #99c0d6;
     }
 </style>
 <script src="js/popup.js"></script>

@@ -3,6 +3,7 @@ var winWidth = 1440;
 var winHeight = 860;
 var notificationId;
 var countdownId = 0;
+var light = true;
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     console.log('收到来自content-script的消息：');
@@ -12,7 +13,18 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     sendResponse('我是后台，我已收到你的消息：' + JSON.stringify(request));
 });
 
+function checklight() {
+    return light
+}
+
+function turnlight() {
+    light = !light;
+}
+
 function timer() {
+    if (!light) {
+        return count
+    }
     if (count < 3600) {
         count++;
         chrome.browserAction.setBadgeText({
