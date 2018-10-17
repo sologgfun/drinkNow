@@ -22,7 +22,7 @@ console.log(getHtml.style.width);
 //文字提示和小鸭子前进
 getClock.style.left = `${bg.timer()-10}%`;
 
-if (Math.ceil(bg.timer() * 36 / 60 == 60)) {
+if (Math.floor(bg.timer() * 36 / 60) == 60) {
     getImg.innerText = `快给我水给我水给我水！`;
     getClock.src = "../img/dead.png";
 }
