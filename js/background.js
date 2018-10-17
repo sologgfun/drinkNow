@@ -6,11 +6,8 @@ var countdownId = 0;
 var light = true;
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    console.log('收到来自content-script的消息：');
-    console.log(request.winWidth);
     winWidth = request.winWidth;
     winHeight = request.winHeight;
-    sendResponse('我是后台，我已收到你的消息：' + JSON.stringify(request));
 });
 
 function checklight() {
@@ -20,26 +17,28 @@ function checklight() {
 function turnlight() {
     light = !light;
 }
-
+//计时器，在后台默默计时
 function timer() {
+    //黑夜停止计时
     if (!light) {
         return count / 36
     }
     if (count < 3600) {
         count++;
+        //给浏览器右上角图标加上计时badge
         chrome.browserAction.setBadgeText({
                 text: Math.floor(count++/ 60)+''
                 }); chrome.browserAction.setBadgeBackgroundColor({
                 color: "#70d2c9"
-                // # 70 d2c9
             });
         }
+        //60分钟通知喝水！
         if (count == 3600) {
-            //通知
             notificationAction();
             count++;
         }
         if (count >= 3600) {
+            //图标改成红色和sos文案！
             chrome.browserAction.setBadgeText({
                 text: 'sos'
             });
@@ -47,7 +46,6 @@ function timer() {
                 color: [255, 0, 0, 255]
             });
         }
-        // console.log(count);
         return count / 36
     }
 
@@ -55,9 +53,6 @@ function timer() {
         count = 0;
         //清除五分钟倒计时
         window.clearInterval(countdownId);
-
-        //test
-        // notificationAction();
     }
 
     var fivemin = 0;
@@ -70,6 +65,7 @@ function timer() {
     };
 
     function notificationAction() {
+        //notification的id要清空，否则create的时候之前id没有清空则会失效
         chrome.notifications.clear("1",
             (id) => {
 
@@ -91,24 +87,11 @@ function timer() {
         });
     }
 
-    //按钮事件触发
-    chrome.notifications.onButtonClicked.addListener(function (x, y) {
-        if (y == 0) {
-            count = 0;
-            //清除五分钟倒计时
-            window.clearInterval(countdownId);
-        } else {
-            //如果不喝水，就开始五分钟倒计时
-            var countdownId = setInterval(Countdown, 1000);
-        }
-    });
-
     function getWandH() {
         var WandH = {
             winWidth: winWidth,
             winHeight: winHeight
         }
-        console.log(WandH);
         return WandH
     }
 
