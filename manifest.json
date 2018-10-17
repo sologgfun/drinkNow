@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "多喝热水",
-    "version": "0.0.1",
-    "description": "妈妈再也不担心我不喝水了!",
+    "name": "干杯！cheers~!",
+    "version": "0.0.3",
+    "description": "干杯！妈妈再也不担心我不喝水了!cheers!Mom is no longer worried that I will not drink water!",
 
     "icons": {
         "16": "./img/logo.png",
