@@ -5,7 +5,9 @@ var getImg = document.getElementById("clock");
 var progressbar = document.getElementById("progressbar");
 var light = bg.checklight();
 var check = document.getElementById("toggle");
+var duckwidth = bg.getduckwidth();
 //true为黑夜
+getClock.style.width = duckwidth+"%";
 
 if (!light) {
     getImg.innerText = `大魔法让时间停止了!`;
@@ -33,6 +35,9 @@ document.getElementsByClassName("bar")[0].style.width = `${bg.timer()}%`;
 document.getElementById("refresh").addEventListener("click", function (e) {
     //刷新计数，小鸭子跑回去
     bg.refresh();
+    bg.duckbecomefat();
+    getClock.style.width = duckwidth+2+"%";
+    duckwidth = duckwidth+2;
     getClock.src = "../img/imok.png";
     getImg.innerText = `哧溜哧溜～喝水了！`;
     getClock.style.left = `-10%`;

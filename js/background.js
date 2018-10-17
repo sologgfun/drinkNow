@@ -4,11 +4,24 @@ var winHeight = 860;
 var notificationId;
 var countdownId = 0;
 var light = true;
+var duckwidth = 15;
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     winWidth = request.winWidth;
     winHeight = request.winHeight;
 });
+
+function duckbecomeslim() {
+    duckwidth = duckwidth-4;
+}
+
+function duckbecomefat() {
+    duckwidth = duckwidth+2;
+}
+
+function getduckwidth() {
+    return duckwidth;
+}
 
 function checklight() {
     return light
@@ -34,6 +47,7 @@ function timer() {
         }
         //60分钟通知喝水！
         if (count == 3600) {
+            duckbecomeslim();
             notificationAction();
             count++;
         }
