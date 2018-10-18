@@ -1,12 +1,12 @@
 
-**干杯！妈妈再也不担心我不喝水了!
-cheers!Mom is no longer worried that I will not drink water!
+**干杯！妈妈再也不担心我不喝水了!**
+**cheers!Mom is no longer worried that I will not drink water!**
 
-*年轻人的第一个chrome插件！
-*关注大家的身体健康;
-*rua!!!
+*年轻人的第一个chrome插件！*
+*关注大家的身体健康;*
+*rua!!!*
 
-**主要功能：
+**主要功能：**
 
 ①通过标签提醒距离上次喝水已经过了多久
 
