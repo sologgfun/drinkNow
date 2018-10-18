@@ -12,9 +12,7 @@
     "permissions": [
         "notifications",
         "webRequestBlocking",
-        "storage",
-        "http://*/*",
-        "https://*/*"
+        "storage"
     ],
     "background": {
         "page": "./background.html"

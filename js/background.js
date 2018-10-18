@@ -12,11 +12,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 });
 
 function duckbecomeslim() {
-    duckwidth = duckwidth-4;
+    duckwidth = duckwidth - 4;
 }
 
 function duckbecomefat() {
-    duckwidth = duckwidth+2;
+    duckwidth = duckwidth + 2;
 }
 
 function getduckwidth() {
@@ -64,6 +64,9 @@ function timer() {
     }
 
     function refresh() {
+        if (!light) {
+            duckwidth = 15;
+        }
         count = 0;
         //清除五分钟倒计时
         window.clearInterval(countdownId);
