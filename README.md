@@ -1,6 +1,8 @@
+感觉工作之后写代码经常忘记喝水，而且我本身因为以前经常不吃早饭，有点胆结石，医生也提醒说要多喝水多运动，但是写代码集中精神之后就经常忘记了。。
+
+前段时间公司体检后发现颈椎有点前倾，明明才刚毕业几个月，，大家一起注意身体健康吧！下面是插件的详细内容～
 
 **干杯！妈妈再也不担心我不喝水了!**
-**cheers!Mom is no longer worried that I will not drink water!**
 
 *年轻人的第一个chrome插件！*
 *关注大家的身体健康;*
@@ -36,3 +38,7 @@ The main function:
 ![day](http://p0.meituan.net/dpgroup/e6c968d702f336e8d2df47f4adf7ec0639097.png)
 
 ![night](http://p1.meituan.net/dpgroup/a95fc0ee6e4ec1cc62a3b21e2271e6eb42003.png)
+
+chrome插件地址：https://chrome.google.com/webstore/search/%E5%B9%B2%E6%9D%AF?hl=zh-CN
+
+github地址:https://github.com/sologgfun/drinkNow
