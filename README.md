@@ -5,7 +5,8 @@
 *年轻人的第一个chrome插件！*
 *关注大家的身体健康;*
 *rua!!!*
-
+![day](http://p0.meituan.net/dpgroup/e6c968d702f336e8d2df47f4adf7ec0639097.png)
+![night](http:////p1.meituan.net/dpgroup/a95fc0ee6e4ec1cc62a3b21e2271e6eb42003.png)
 **主要功能：**
 
 ①通过标签提醒距离上次喝水已经过了多久
