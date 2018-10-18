@@ -1,4 +1,4 @@
-var count = 0;
+var count = 3590;
 var winWidth = 1440;
 var winHeight = 860;
 var notificationId;
@@ -17,6 +17,10 @@ function duckbecomeslim() {
 
 function duckbecomefat() {
     duckwidth = duckwidth + 2;
+}
+
+function smallduck() {
+    duckwidth = duckwidth - 2;
 }
 
 function getduckwidth() {
@@ -65,9 +69,6 @@ function timer() {
 }
 
 function refresh() {
-    if (!light) {
-        duckwidth = 15;
-    }
     count = 0;
     //清除五分钟倒计时
     window.clearInterval(countdownId);
@@ -102,6 +103,12 @@ function notificationAction() {
         message: '已经一个小时没喝水了！小鸭子渴死了！'
     });
 }
+
+chrome.notifications.onButtonClicked.addListener(function (id, btnIndex) {
+    console.log(btnIndex);
+    count = btnIndex ? count : 0;
+    console.log("123" + count);
+});
 
 function getWandH() {
     var WandH = {

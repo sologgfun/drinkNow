@@ -22,7 +22,7 @@ getHtml.style.height = WandH.winHeight * 1 / 7 + "px";
 console.log(getHtml.style.width);
 
 //文字提示和小鸭子前进
-getClock.style.left = `${bg.timer()-10}%`;
+getClock.style.left = `${bg.timer() - 10}%`;
 
 if (Math.floor(bg.timer() * 36 / 60) == 60) {
     getImg.innerText = `快给我水给我水给我水！`;
@@ -35,9 +35,15 @@ document.getElementsByClassName("bar")[0].style.width = `${bg.timer()}%`;
 document.getElementById("refresh").addEventListener("click", function (e) {
     //刷新计数，小鸭子跑回去
     bg.refresh();
-    bg.duckbecomefat();
-    getClock.style.width = duckwidth + 2 + "%";
-    duckwidth = duckwidth + 2;
+    if (!light) {
+        getClock.style.width = duckwidth - 2 + "%";
+        bg.smallduck();
+        duckwidth = duckwidth - 2;
+    } else {
+        getClock.style.width = duckwidth + 2 + "%";
+        bg.duckbecomefat();
+        duckwidth = duckwidth + 2;
+    }
     getClock.src = "../img/imok.png";
     getImg.innerText = `哧溜哧溜～喝水了！`;
     getClock.style.left = `-10%`;
@@ -47,7 +53,7 @@ document.getElementById("refresh").addEventListener("click", function (e) {
 document.getElementById("sun").addEventListener("click", function (e) {
     //暂停计数
     bg.turnlight();
-
+    light = !light;
     //样式改变
     if (bg.checklight()) {
         getImg.innerText = ``;
