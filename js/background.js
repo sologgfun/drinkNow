@@ -1,4 +1,4 @@
-var count = 3590;
+var count = 0;
 var winWidth = 1440;
 var winHeight = 860;
 var notificationId;
