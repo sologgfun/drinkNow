@@ -44,7 +44,7 @@ function timer() {
         count++;
         //给浏览器右上角图标加上计时badge
         chrome.browserAction.setBadgeText({
-            text: Math.floor(count++ / 60) + ''
+            text: Math.floor(count / 60) + ''
         });
         chrome.browserAction.setBadgeBackgroundColor({
             color: "#70d2c9"
@@ -87,7 +87,7 @@ function notificationAction() {
     //notification的id要清空，否则create的时候之前id没有清空则会失效
     chrome.notifications.clear("1",
         (id) => {
-            console.log(id);
+
         });
     chrome.notifications.create("1", {
         type: 'basic',
@@ -105,9 +105,7 @@ function notificationAction() {
 }
 
 chrome.notifications.onButtonClicked.addListener(function (id, btnIndex) {
-    console.log(btnIndex);
     count = btnIndex ? count : 0;
-    console.log("123" + count);
 });
 
 function getWandH() {

@@ -8,5 +8,4 @@ chrome.runtime.sendMessage({
 	winWidth: winWidth,
 	winHeight: winHeight
 }, function (response) {
-	console.log('后台回复：' + response);
 });
