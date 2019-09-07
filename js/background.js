@@ -9,6 +9,7 @@ var duckwidth = 15;
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     winWidth = request.winWidth;
     winHeight = request.winHeight;
+    sendResponse('');
 });
 
 function duckbecomeslim() {
